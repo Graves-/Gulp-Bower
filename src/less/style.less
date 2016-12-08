@@ -1,89 +1,142 @@
-/* Variables */
-@background-color: #ffffff;
-@text-color: #1A137E;
+@color1: #1B1F3A;
+@color2: #53354A;
+@color3: #A64942;
+@color4: #FF7844;
+@color-bg-text: #F5F5F5;
+@text-color-dark: #113F67;
+@text-color1: #D5EEFF;
+@bg-img1: "../img/city1.jpg";
+@bg-img2: "../img/nature1.jpg";
+@bg-img3: "../img/beach1.jpg";
 
-p{
-	background-color: @background-color;
-	color: @text-color;
-	padding: 15px;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
+
+body{
+	padding: 0;
+	margin: 0;
 }
 
-ul{
-	background-color: @background-color;
+section{
+	height: 100vh;
+	color: @text-color1;
 }
 
-li{
-	color: @text-color;
+.row{
+	margin: 0;
 }
 
+.info-section{
+	text-align: center;
+	color: @text-color-dark;
+	background-color: @color-bg-text;
+	padding-top: 100px;
+	padding-bottom: 100px;
 
-/* Mixins */
-#circle(@size: 25px){
-	background-color: #4CAF50;
-	border-radius: 100%;
+	p{
+		text-align: justify;
+		font-family: 'Open Sans', sans-serif;
+		color: @text-color-dark;
+	}
 
-	width: @size;
-	height: @size;
+	h3{
+		text-align: center;
+		font-family: 'Oswald', sans-serif;
+		color: @text-color-dark;
+	}
 }
 
-#small-circle{
-	#circle
+#Seccion1{
+	/*background-color: @color1;*/
+	background: url(@bg-img1) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	position: relative;
+
+	.landing{
+		color: white;
+		font-family: 'Oswald', sans-serif;
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: white;
+		background: fade(@color1, 20%);
+		padding: 30px;
+
+		.landing-links{
+			padding-top: 30px;
+			text-align: center;
+			a{
+				margin-top: 20px;
+				text-align: center;
+				color: white;
+				background-color: white;
+				background: fade(@color1, 20%);
+				border-radius: 10px;
+				border: 5px solid white;
+				padding: 10px;
+			}
+
+			a:hover, a:focus{
+				text-decoration: none;
+				cursor: pointer;
+			}
+			
+		}
+	}
+
+	h1{
+		text-align: center;
+		font-size: 60pt;
+	}
+
+	p{
+		text-align: justify;
+	}
 }
 
-#big-circle{
-	width: 100px;
-	height: 100px;
-	#circle(100px)
+#Seccion2{
+	background-color: @color2;
+	background: url(@bg-img2) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
-/* Nesting */
-/*
-ul{
-  background-color: #03A9F4;
-  padding: 10px;
-  list-style: none;
-
-  li{
-    background-color: #fff;
-    border-radius: 3px;
-    margin: 10px 0;
-  }
-}
-*/
-
-/* Operations */
-
-/*
-@div-width: 100px;
-@color: #03A9F4;
-
-div{
-  height: 50px;
-  display: inline-block;
+#Seccion3{
+	background-color: @color2;
+	background: url(@bg-img3) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
-#left{
-  width: @div-width;
-  background-color: @color - 100;
+footer{
+
+	.social{
+		text-align: center;
+
+		.fa{
+			padding-top: 30px;
+			padding-bottom: 50px;
+		}
+
+		.fa-facebook-square{
+			color: #3b5998;
+		}
+
+		.fa-twitter-square{
+			color: #00aced;
+		}
+
+		.fa-phone-square{
+			color: #d32d04;
+		}
+	}
 }
-
-#right{
-  width: @div-width * 2;
-  background-color: @color;
-}
-*/
-
-/* Functions */
-/*
-@var: #004590;
-
-div{
-  height: 50px;
-  width: 50px;
-  background-color: @var;
-
-  &:hover{
-    background-color: fadeout(@var, 50%)
-  }
-}
-*/

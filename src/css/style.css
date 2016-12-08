@@ -1,73 +1,108 @@
-/* Variables */
-p {
-  background-color: #ffffff;
-  color: #1A137E;
-  padding: 15px;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Oswald');
+body {
+  padding: 0;
+  margin: 0;
 }
-ul {
-  background-color: #ffffff;
+section {
+  height: 100vh;
+  color: #D5EEFF;
 }
-li {
-  color: #1A137E;
+.row {
+  margin: 0;
 }
-/* Mixins */
-#small-circle {
-  background-color: #4CAF50;
-  border-radius: 100%;
-  width: 25px;
-  height: 25px;
+.info-section {
+  text-align: center;
+  color: #113F67;
+  background-color: #F5F5F5;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
-#big-circle {
-  background-color: #4CAF50;
-  border-radius: 100%;
-  width: 100px;
-  height: 100px;
+.info-section p {
+  text-align: justify;
+  font-family: 'Open Sans', sans-serif;
+  color: #113F67;
 }
-/* Nesting */
-/*
-ul{
-  background-color: #03A9F4;
+.info-section h3 {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color: #113F67;
+}
+#Seccion1 {
+  /*background-color: @color1;*/
+  background: url("../img/city1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+#Seccion1 .landing {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  background: rgba(27, 31, 58, 0.2);
+  padding: 30px;
+}
+#Seccion1 .landing .landing-links {
+  padding-top: 30px;
+  text-align: center;
+}
+#Seccion1 .landing .landing-links a {
+  margin-top: 20px;
+  text-align: center;
+  color: white;
+  background-color: white;
+  background: rgba(27, 31, 58, 0.2);
+  border-radius: 10px;
+  border: 5px solid white;
   padding: 10px;
-  list-style: none;
-
-  li{
-    background-color: #fff;
-    border-radius: 3px;
-    margin: 10px 0;
-  }
 }
-*/
-/* Operations */
-/*
-@div-width: 100px;
-@color: #03A9F4;
-
-div{
-  height: 50px;
-  display: inline-block;
+#Seccion1 .landing .landing-links a:hover,
+#Seccion1 .landing .landing-links a:focus {
+  text-decoration: none;
+  cursor: pointer;
 }
-
-#left{
-  width: @div-width;
-  background-color: @color - 100;
+#Seccion1 h1 {
+  text-align: center;
+  font-size: 60pt;
 }
-
-#right{
-  width: @div-width * 2;
-  background-color: @color;
+#Seccion1 p {
+  text-align: justify;
 }
-*/
-/* Functions */
-/*
-@var: #004590;
-
-div{
-  height: 50px;
-  width: 50px;
-  background-color: @var;
-
-  &:hover{
-    background-color: fadeout(@var, 50%)
-  }
+#Seccion2 {
+  background-color: #53354A;
+  background: url("../img/nature1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-*/
+#Seccion3 {
+  background-color: #53354A;
+  background: url("../img/beach1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+footer .social {
+  text-align: center;
+}
+footer .social .fa {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+footer .social .fa-facebook-square {
+  color: #3b5998;
+}
+footer .social .fa-twitter-square {
+  color: #00aced;
+}
+footer .social .fa-phone-square {
+  color: #d32d04;
+}

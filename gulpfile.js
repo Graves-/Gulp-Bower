@@ -27,30 +27,32 @@ var sass = require('gulp-ruby-sass');
 /*LESS*/
 var less = require('gulp-less');
 var path = require('path');
+var cssnano = require('gulp-cssnano');
 
 gulp.task('less', function () {
   return gulp.src('src/less/*.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
-    .pipe(gulp.dest('src/css'));
+    .pipe(gulp.dest('src/css'))
+    .pipe(cssnano())
+    .pipe(gulp.dest('build/css'));
 });
 
 
-/* Minify CSS */
-var cssnano = require('gulp-cssnano');
-
+/* Minify CSS
 gulp.task('cssmin', function () {
   return gulp.src('src/css/*.css')
     .pipe(cssnano())
     .pipe(gulp.dest('build/css'));
 });
+*/
 
 // Image Optimisation
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
  gulp.task('images', function() {
-  return gulp.src('src/images/**/*')
+  return gulp.src('src/img/*')
     .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
     .pipe(gulp.dest('build/img'));
 });
@@ -72,5 +74,13 @@ gulp.task('watch', function() {
   gulp.watch('src/images/**/*', ['images']);
  });
 
+//LiveReload
+var livereload = require('gulp-livereload');
+
+gulp.task('live', function() {
+  livereload.listen();
+  gulp.watch('less/*.less', ['less']);
+});
+
 // Default task
-gulp.task('default', ['scripts','sass','images','less','lint','cssmin']);
+gulp.task('default', ['scripts','images','less','lint']);

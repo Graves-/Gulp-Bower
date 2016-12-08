@@ -1,0 +1,73 @@
+/* Variables */
+p {
+  background-color: #ffffff;
+  color: #1A137E;
+  padding: 15px;
+}
+ul {
+  background-color: #ffffff;
+}
+li {
+  color: #1A137E;
+}
+/* Mixins */
+#small-circle {
+  background-color: #4CAF50;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+}
+#big-circle {
+  background-color: #4CAF50;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
+/* Nesting */
+/*
+ul{
+  background-color: #03A9F4;
+  padding: 10px;
+  list-style: none;
+
+  li{
+    background-color: #fff;
+    border-radius: 3px;
+    margin: 10px 0;
+  }
+}
+*/
+/* Operations */
+/*
+@div-width: 100px;
+@color: #03A9F4;
+
+div{
+  height: 50px;
+  display: inline-block;
+}
+
+#left{
+  width: @div-width;
+  background-color: @color - 100;
+}
+
+#right{
+  width: @div-width * 2;
+  background-color: @color;
+}
+*/
+/* Functions */
+/*
+@var: #004590;
+
+div{
+  height: 50px;
+  width: 50px;
+  background-color: @var;
+
+  &:hover{
+    background-color: fadeout(@var, 50%)
+  }
+}
+*/
